@@ -14,8 +14,8 @@ output "region" {
 }
 
 output "kubectl_config" {
-  description = "Kubeconfig filename"
-  value       = module.eks.kubeconfig_filename
+  description = "Kubeconfig"
+  value       = module.eks.kubeconfig
 }
 
 
