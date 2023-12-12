@@ -4,7 +4,7 @@ locals {
 
 resource "aws_eks_cluster" "eks_cluster" {
   name     = local.clustername
-  role_arn = "aws:sts::731667926600:assumed-role/voclabs/user2758359=carloslopez94630@gmail.com"
+  role_arn = "arn:aws:iam::731667926600:role/voclabs"
 
   vpc_config {
     subnet_ids         = ["subnet-0055b736d06be0aad", "subnet-0e7bffcc06df511b7"]
@@ -17,7 +17,7 @@ resource "aws_eks_cluster" "eks_cluster" {
 resource "aws_eks_node_group" "node_group" {
   cluster_name    = aws_eks_cluster.eks_cluster.name
   node_group_name = "eks-cluster-node-group"
-  node_role_arn   = "aws:sts::731667926600:assumed-role/voclabs/user2758359=carloslopez94630@gmail.com"
+  node_role_arn   = "arn:aws:iam::731667926600:role/voclabs"
 
   subnet_ids = ["subnet-0055b736d06be0aad", "subnet-0e7bffcc06df511b7"]
 
