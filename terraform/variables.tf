@@ -5,7 +5,7 @@ variable "region" {
 }
 
 variable "clusterName" {
-  description = "Name of the EKS Cluster"
+  description = "Name of the EKS cluster"
   type        = string
   default     = "ortproyecteks"
 }
