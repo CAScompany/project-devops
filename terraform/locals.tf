@@ -7,8 +7,8 @@ resource "aws_eks_cluster" "eks_cluster" {
   role_arn = "arn:aws:iam::195400145213:role/LabRole"
 
   vpc_config {
-    subnet_ids         = ["subnet-0055b736d06be0aad", "subnet-0e7bffcc06df511b7"]
-    security_group_ids = ["sg-0badffa158bf35795"]
+    subnet_ids         = ["subnet-079ce72941a946f2a", "subnet-0b53f4239bbe656d7"]
+    security_group_ids = ["sg-06aa9121ecd538fed"]
   }
 
   
@@ -19,7 +19,7 @@ resource "aws_eks_node_group" "node_group" {
   node_group_name = "eks-cluster-node-group"
   node_role_arn   = "arn:aws:iam::195400145213:role/LabRole"
 
-  subnet_ids = ["subnet-0055b736d06be0aad", "subnet-0e7bffcc06df511b7"]
+  subnet_ids = ["subnet-079ce72941a946f2a", "subnet-0b53f4239bbe656d7"]
 
   scaling_config {
     desired_size = 1
