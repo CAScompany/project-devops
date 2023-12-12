@@ -14,7 +14,7 @@ output "region" {
 }
 
 output "cluster_name" {
-  description = var.clusterName
+  description = ortproyect-eks
   value       = module.eks.cluster_name
 }
 
