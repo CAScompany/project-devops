@@ -20,9 +20,6 @@ resource "random_string" "suffix" {
   special = false
 }
 
-module "vpc" {
-  source = "./vpc"  
-}
 
 module "eks" {
   source  = "terraform-aws-modules/eks/aws"
