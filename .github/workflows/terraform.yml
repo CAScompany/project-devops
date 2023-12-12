@@ -44,7 +44,9 @@ jobs:
 
       - name: Terraform format
         id: fmt
-        run: terraform fmt -check
+        run: |
+          terraform fmt -recursive
+          terraform fmt -check
         # if the fmt is not correct it will return a !=0 exit code which will exit de workflow 
 
       - name: Terraform validate
