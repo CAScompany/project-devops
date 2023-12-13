@@ -18,4 +18,8 @@ spec:
       containers:
       - image: 195400145213.dkr.ecr.us-east-1.amazonaws.com/proyecto-ort-im:product-service-v30
         name: product-service-v30
+
+
+
+        #
     
