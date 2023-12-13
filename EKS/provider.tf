@@ -4,6 +4,6 @@ provider "aws" {
 
 resource "null_resource" "apply_kubernetes_manifest" {
   provisioner "local-exec" {
-    command = "kubectl apply -f ./EKS/deployment.yml"
+    command = "kubectl apply -f deployment.yml"
   }
 }
