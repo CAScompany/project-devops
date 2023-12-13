@@ -1,6 +1,6 @@
 locals {
   clustername = "ortproyect-eks"
-}
+} 
 
 resource "aws_eks_cluster" "eks_cluster" {
   name     = local.clustername
@@ -32,5 +32,3 @@ resource "aws_eks_node_group" "node_group" {
 
   
 }
-#
-#

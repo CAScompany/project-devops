@@ -1,0 +1,3 @@
+locals {
+  clustername = "ortproyect-eks"
+}
