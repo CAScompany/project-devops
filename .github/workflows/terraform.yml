@@ -3,7 +3,7 @@ name: "IAC"
 on:
   push:
     branches:
-      - main
+     # - main
       - stage
     paths:
       - 'EKS/**'
@@ -11,8 +11,8 @@ on:
   pull_request:
     branches:
       - main
-    paths: 
-      - 'terraform/**'
+    
+   
 
 
 env: 
