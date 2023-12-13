@@ -1,3 +1,3 @@
 locals {
-  clustername = "ortproyect-eks"
+  clustername = "cascompany-eks"
 }
