@@ -7,4 +7,3 @@ resource "null_resource" "apply_kubernetes_manifest" {
     command = "kubectl apply -f k8s/deployment.yml"
   }
 }
-#
