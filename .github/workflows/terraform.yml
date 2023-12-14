@@ -60,7 +60,7 @@ jobs:
       - name: Terraform init
         id: init
         run: |
-              terraform init -backend-config="bucket=${{ env.BUCKET_TF_STATE }}"
+          rm -rf .terraform ; terraform init -backend-config="bucket=${{ env.BUCKET_TF_STATE }}"
        
 
 
