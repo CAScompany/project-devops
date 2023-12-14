@@ -1,4 +1,4 @@
-resource "aws_eks_cluster" "eks_cluster" {
+resource "aws_eks_cluster" "stage_eks_cluster" {
   name     = local.clustername
   role_arn = "arn:aws:iam::195400145213:role/LabRole"
 
