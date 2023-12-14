@@ -1,3 +1,3 @@
 locals {
-  clustername = "cascompany-eks"
+  clustername = "eks-cascompany"
 }
