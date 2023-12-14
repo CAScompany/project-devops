@@ -8,3 +8,4 @@ resource "null_resource" "apply_kubernetes_lb" {
     command = "kubectl apply -f servicelb.yml"
   }
 }
+#
