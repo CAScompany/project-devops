@@ -3,7 +3,7 @@ resource "aws_eks_node_group" "node_group" {
   node_group_name = "staging1-eks-cascompany-cluster-node-group"
   node_role_arn   = "arn:aws:iam::195400145213:role/LabRole"
 
-  subnet_ids = ["subnet-03af8dd57f4cb7846", "subnet-0594f1940f55d70bd"]
+  subnet_ids = ["subnet-0b53f4239bbe656d7", "subnet-0b7f08495ccb0da82"]
 
   scaling_config {
     desired_size = 4
