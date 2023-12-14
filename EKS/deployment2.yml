@@ -2,29 +2,29 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: product-service-v30
-  name: product-service-v30
+    app: payment-service-v79
+  name: payment-service-v79
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: product-service-v30
+      app: payment-service-v79
   strategy: {}
   template:
     metadata:
       labels:
-        app: product-service-v30
+        app: payment-service-v79
     spec:
       containers:
-      - image: 195400145213.dkr.ecr.us-east-1.amazonaws.com/proyecto-ort-im:product-service-v30
-        name: product-service-v30
+      - image: 195400145213.dkr.ecr.us-east-1.amazonaws.com/proyecto-ort-im:paymnet-service-v79
+        name: payment-service-v79
         ports: 
-      - containerport: 80
+      - containerport: 81
       volumeMounts:
         - name: persistent-storage
-          mountPath: "/var/product-servicemnt"
+          mountPath: "/var/payment-servicemnt"
       volumes:
       - name: persistent-storage
         persistentVolumeClaim:
           claimName: pvc-efs
-
+      
