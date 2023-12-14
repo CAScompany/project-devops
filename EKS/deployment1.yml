@@ -20,6 +20,7 @@ spec:
         name: product-service-v30
         ports: 
       - containerPort: 80
+        name: http
       volumeMounts:
         - name: persistent-storage
           mountPath: "/var/product-servicemnt"

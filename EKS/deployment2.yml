@@ -20,6 +20,7 @@ spec:
         name: payment-service-v79
         ports: 
         - containerPort: 81
+          name: http-alt
         volumeMounts:
         - name: persistent-storage
           mountPath: "/var/payment-servicemnt"
