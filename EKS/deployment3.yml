@@ -17,14 +17,13 @@ spec:
     spec:
       containers:
       - image: 195400145213.dkr.ecr.us-east-1.amazonaws.com/proyecto-ort-im:shipping-service-v81
-        name: payment-service-v79
+        name: shipping-service-v81
         ports: 
-      - containerPort: 83
-      volumeMounts:
+        - containerPort: 81
+        volumeMounts:
         - name: persistent-storage
           mountPath: "/var/shipping-servicemnt"
       volumes:
       - name: persistent-storage
         persistentVolumeClaim:
           claimName: pvc-efs
-
