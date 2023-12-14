@@ -1,6 +1,6 @@
 resource "aws_eks_node_group" "node_group" {
   cluster_name    = local.clustername
-  node_group_name = "staging-eks-cascompany-cluster-node-group"
+  node_group_name = "staging1-eks-cascompany-cluster-node-group"
   node_role_arn   = "arn:aws:iam::195400145213:role/LabRole"
 
   subnet_ids = ["subnet-03af8dd57f4cb7846", "subnet-0594f1940f55d70bd"]
