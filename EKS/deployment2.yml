@@ -19,8 +19,8 @@ spec:
       - image: 195400145213.dkr.ecr.us-east-1.amazonaws.com/proyecto-ort-im:payment-service-v79
         name: payment-service-v79
         ports: 
-        - containerPort: 81
-          name: http-alt
+        - containerPort: 8
+          name: http
         volumeMounts:
         - name: persistent-storage
           mountPath: "/var/payment-servicemnt"
