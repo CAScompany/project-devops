@@ -3,7 +3,7 @@ resource "aws_eks_cluster" "staging_eks_cluster" {
   role_arn = "arn:aws:iam::195400145213:role/LabRole"
 
   vpc_config {
-    subnet_ids         = ["subnet-0b53f4239bbe656d7", "subnet-0b7f08495ccb0da82"]
-    security_group_ids = ["sg-01793416c6e25d8e7", "sg-0599b33420fce76e7"]
+    subnet_ids         = ["subnet-0594f1940f55d70bd", "subnet-092e6157ef7c780c3"]
+    security_group_ids = ["sg-06aa9121ecd538fed"]
   }
 }
