@@ -3,7 +3,9 @@ provider "aws" {
 }
 
 resource "null_resource" "apply_kubernetes_manifest" {
+  count = 3  
+
   provisioner "local-exec" {
-    command = "kubectl apply -f deployment.yml"
+    command = "kubectl apply -f deployment${count.index + 1}.yaml"  
   }
 }
