@@ -9,7 +9,12 @@ spec:
   selector:
     matchLabels:
       app: payment-service-v79
-  strategy: {}
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+
   template:
     metadata:
       labels:
@@ -19,7 +24,7 @@ spec:
       - image: 195400145213.dkr.ecr.us-east-1.amazonaws.com/proyecto-ort-im:payment-service-v79
         name: payment-service-v79
         ports: 
-        - containerPort: 8
+        - containerPort: 80
           name: http
         volumeMounts:
         - name: persistent-storage
