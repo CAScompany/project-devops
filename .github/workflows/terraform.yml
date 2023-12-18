@@ -81,16 +81,8 @@ jobs:
         if: steps.plan.outcome == 'failure'
         run: exit 1
 
-      - name: Terraform apply
-        id: Apply     
-        run: terraform destroy -auto-approve -input=false -parallelism=1 planfile 
-              
-      # - name: Terraform apply
-        # id: Apply     
-        # run: terraform apply -auto-approve -input=false -parallelism=1 planfile   
-
       # - name: Terraform apply
       #   id: Apply     
-      #   run: terraform apply -auto-approve -input=false -parallelism=1 planfile
-        # if workflow is being executed on main branch and also was due to a push, then terraform apply will be executed
+      #   run: terraform destroy -auto-approve -input=false -parallelism=1 planfile 
+
 

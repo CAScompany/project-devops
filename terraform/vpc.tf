@@ -1,9 +1,26 @@
-resource "aws_eks_cluster" "staging_eks_cluster" {
-  name     = local.clustername
-  role_arn = "arn:aws:iam::195400145213:role/LabRole"
+module "vpc" {
+  source  = "terraform-aws-modules/vpc/aws"
+  version = "5.1.2"
 
-  vpc_config {
-    subnet_ids         = ["subnet-07473c937c3809cc4", "subnet-079ce72941a946f2a"]
-    security_group_ids = ["sg-06816eae0b0dfe36a", "sg-0854cac2c2cbdf5ca"]
+  name = "ort-eks"
+
+  cidr = "172.20.0.0/16"
+  azs  = slice(data.aws_availability_zones.available.names, 0, 3)
+
+  private_subnets = ["172.20.1.0/24", "172.20.2.0/24", "172.20.3.0/24"]
+  public_subnets  = ["172.20.4.0/24", "172.20.5.0/24", "172.20.6.0/24"]
+
+  enable_nat_gateway   = false
+  single_nat_gateway   = false
+  enable_dns_hostnames = false
+
+  public_subnet_tags = {
+    "kubernetes.io/cluster/${local.cluster_name}" = "shared"
+    "kubernetes.io/role/elb"                      = 1
+  }
+
+  private_subnet_tags = {
+    "kubernetes.io/cluster/${local.cluster_name}" = "shared"
+    "kubernetes.io/role/internal-elb"             = 1
   }
 }
