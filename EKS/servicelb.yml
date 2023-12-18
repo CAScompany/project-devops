@@ -32,6 +32,6 @@ spec:
   type: LoadBalancer
   ports:
   - port: 80  
-    targetPort: 
+    targetPort: 80
   selector:
     app: shipping-service-v81  
